@@ -1,24 +1,33 @@
 /* Barra de navegación */
-nav ul {
+.nav {
+    background-color: #333;
+}
+
+.nav__list {
     display: flex;
     justify-content: space-around;
     padding: 0;
     list-style: none;
-    background-color: #333;
 }
-nav ul li a {
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
     display: block;
     padding: 15px;
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
-nav ul li a:hover {
+
+.nav__link--hover:hover {
     background-color: #575757;
 }
 
-/* Estilos para los títulos */
-h1, h2 {
+/* Títulos */
+.title {
     text-align: center;
     background: linear-gradient(to right, #09f, #02a);
     padding: 15px;
@@ -27,8 +36,16 @@ h1, h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.title--h1 {
+    font-size: 2em;
+}
+
+.title--h2 {
+    font-size: 1.5em;
+}
+
 /* Imagen personalizada */
-img {
+.image {
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
@@ -36,13 +53,13 @@ img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-img:hover {
+.image--hover:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Ingeniero de Software */
-.engineer-title {
+.engineer {
     text-align: center;
     font-size: 1.8em;
     font-weight: bold;
@@ -51,7 +68,14 @@ img:hover {
     position: relative;
 }
 
-.engineer-title::after {
+.engineer__highlight {
+    font-weight: bold;
+    color: #09f;
+    font-size: 2.2em;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.engineer__line {
     content: '';
     position: absolute;
     width: 50px;
@@ -62,13 +86,7 @@ img:hover {
     bottom: -10px;
 }
 
-.highlighted-text {
-    font-weight: bold;
-    color: #09f;
-    font-size: 2.2em;
-    animation: fadeIn 2s ease-in-out infinite alternate;
-}
-
+/* Animación */
 @keyframes fadeIn {
     0% { opacity: 0.5; }
     100% { opacity: 1; }
@@ -81,7 +99,7 @@ img:hover {
     margin: 0 auto;
 }
 
-.timeline::after {
+.timeline__line {
     content: '';
     position: absolute;
     width: 6px;
@@ -92,7 +110,7 @@ img:hover {
     margin-left: -3px;
 }
 
-.timeline-container {
+.timeline__container {
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
@@ -100,15 +118,15 @@ img:hover {
     box-sizing: border-box;
 }
 
-.timeline-container.left {
+.timeline__container--left {
     left: 0;
 }
 
-.timeline-container.right {
+.timeline__container--right {
     left: 50%;
 }
 
-.timeline-container::after {
+.timeline__marker {
     content: '';
     position: absolute;
     width: 25px;
@@ -121,11 +139,11 @@ img:hover {
     z-index: 1;
 }
 
-.timeline-container.right::after {
+.timeline__marker--right {
     left: -16px;
 }
 
-.timeline-content {
+.timeline__content {
     padding: 20px;
     background-color: #09f;
     position: relative;
@@ -135,35 +153,28 @@ img:hover {
 }
 
 /* Videos y proyectos */
-.videos-container {
+.media__videos {
     display: flex;
     gap: 20px;
     justify-content: space-evenly;
 }
 
-.projects-container {
+.media__projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
-.project-card {
+.media__project-card {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Estilo para el botón "Mostrar información" en la esquina superior derecha */
-#mostrar {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #48b300;
-    color: #fff;
+/* Botones */
+.button {
     border: none;
-    padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1em;
@@ -171,40 +182,39 @@ img:hover {
     transition: background-color 0.3s;
 }
 
-#mostrar:hover {
+.button--fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
     background-color: #48b300;
+    color: #fff;
+    padding: 10px 15px;
 }
 
-/* Estilo para el botón de cierre dentro del modal */
-#cerrar {
+.button--fixed:hover {
+    background-color: #369a00;
+}
+
+.button--close {
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: #333;
     color: white;
-    border: none;
     padding: 5px 10px;
-    cursor: pointer;
     border-radius: 50%;
     font-size: 0.9em;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
 }
 
-#cerrar:hover {
+.button--close:hover {
     background-color: #555;
 }
 
-
-
 /* Footer */
-footer {
+.footer {
     text-align: center;
     padding: 20px 0;
     background-color: #333;
     color: white;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
-
